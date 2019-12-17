@@ -1,0 +1,6 @@
+# action.yml
+name: 'Build pdf with latexmk'
+description: 'build pdf using arkark/latexmk:full'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
