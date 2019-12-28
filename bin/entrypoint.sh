@@ -3,6 +3,9 @@ set -eux
 
 FILE_NAME=${1:-main.tex}
 
+# create directory to output aux
+find . -name '*.tex' -exec dirname {} \; | uniq | sed -e 's_\./_out/_g' | sed -e '/^\./d' | xargs mkdir -p
+
 latexmk "$FILE_NAME"
 
 DATE=`date +"%Y.%m.%d.%I.%M.%S"`
